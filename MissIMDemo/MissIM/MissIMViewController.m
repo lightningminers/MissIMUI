@@ -66,7 +66,9 @@ static NSString *kMissIMServiceClientId = @"missFServiceClient"; //客服Id
     //注册处理键盘的通知
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
-    //
+    
+    
+    
     [self connectionToAVIMClient];
 }
 
@@ -331,7 +333,6 @@ static NSString *kMissIMServiceClientId = @"missFServiceClient"; //客服Id
                                 [weakSelf.mainUI.MissIMActivity stopAnimating];
                                 [weakSelf.mainUI.MissIMTableView reloadData];
                             });
-                            
                         }
                     }
                 }else{
@@ -374,6 +375,8 @@ static NSString *kMissIMServiceClientId = @"missFServiceClient"; //客服Id
             weakSelf.conversationId = weakMessage.conversationId;
             weakSelf.messageNumber ++;
             [weakSelf.modelManager addMissIMDataSource:dataMessage ordered:YES];
+            //注册通知
+            [weakSelf postMessageCenter:weakSelf.messageId conversationId:weakSelf.conversationId timeId:weakSelf.timeId messageNumber:weakSelf.messageNumber MissIMPlistPath:weakSelf.modelManager.MissIMPlistPath];
             NSInteger row = weakSelf.modelManager.dataSource.count - 1;
             NSIndexPath *indexPath = [NSIndexPath indexPathForItem:row inSection:0];
             [weakSelf.mainUI.MissIMTableView reloadData];
@@ -410,6 +413,8 @@ static NSString *kMissIMServiceClientId = @"missFServiceClient"; //客服Id
                         self.timeId = imageMessage.sendTimestamp;
                         self.messageNumber ++;
                         [self.modelManager addMissIMDataSource:dataMessage ordered:YES];
+                        //注册通知
+                        [self postMessageCenter:self.messageId conversationId:self.conversationId timeId:self.timeId messageNumber:self.messageNumber MissIMPlistPath:self.modelManager.MissIMPlistPath];
                         NSInteger row = self.modelManager.dataSource.count - 1;
                         NSIndexPath *indexPath = [NSIndexPath indexPathForItem:row inSection:0];
                         [self.mainUI.MissIMTableView reloadData];
@@ -440,6 +445,8 @@ static NSString *kMissIMServiceClientId = @"missFServiceClient"; //客服Id
             self.timeId = message.sendTimestamp;
             self.messageNumber ++;
             [self.modelManager addMissIMDataSource:dataMessage ordered:YES];
+            //注册通知
+            [self postMessageCenter:self.messageId conversationId:self.conversationId timeId:self.timeId messageNumber:self.messageNumber MissIMPlistPath:self.modelManager.MissIMPlistPath];
             NSInteger row = self.modelManager.dataSource.count - 1;
             NSIndexPath *indexPath = [NSIndexPath indexPathForItem:row inSection:0];
             [self.mainUI.MissIMTableView reloadData];
@@ -468,6 +475,8 @@ static NSString *kMissIMServiceClientId = @"missFServiceClient"; //客服Id
                 self.timeId = message.sendTimestamp;
                 self.messageNumber ++;
                 [self.modelManager addMissIMDataSource:dataMessage ordered:YES];
+                //注册通知
+                [self postMessageCenter:self.messageId conversationId:self.conversationId timeId:self.timeId messageNumber:self.messageNumber MissIMPlistPath:self.modelManager.MissIMPlistPath];
                 NSInteger row = self.modelManager.dataSource.count - 1;
                 NSIndexPath *indexPath = [NSIndexPath indexPathForItem:row inSection:0];
                 [self.mainUI.MissIMTableView reloadData];
@@ -476,6 +485,15 @@ static NSString *kMissIMServiceClientId = @"missFServiceClient"; //客服Id
         }
 }
 
+
+-(void)postMessageCenter:(NSString *)messageId conversationId:(NSString *)conversationId timeId:(int64_t)timestamp messageNumber:(NSInteger)messageNumber MissIMPlistPath:(NSString *)MissIMPlistPath
+{
+    NSNumber *timeId = [NSNumber numberWithLongLong:timestamp];
+    NSNumber *messageCount = [NSNumber numberWithLong:messageNumber];
+    NSDictionary *dataSource = @{@"messageId":messageId,@"timeId":timeId,@"messageNumber":messageCount,@"conversationId":conversationId,@"MissIMPlistPath":MissIMPlistPath};
+    //处理App运行期的通知
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"saveMissIMPlist" object:nil userInfo:dataSource];
+}
 
 #pragma mark 处理网络状态
 
