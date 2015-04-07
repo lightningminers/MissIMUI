@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>4F121C2B-FF8C-4FFF-8409-B909F4E823ED</string>
+	<key>IDESourceControlProjectName</key>
+	<string>MissIMDemo</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>9D14A923DC13AE002C713ABB61E3F8E18C78D396</key>
+		<string>github.com:lcepy/MissIMUI.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>MissIMDemo/MissIMDemo.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>9D14A923DC13AE002C713ABB61E3F8E18C78D396</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:lcepy/MissIMUI.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>9D14A923DC13AE002C713ABB61E3F8E18C78D396</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>9D14A923DC13AE002C713ABB61E3F8E18C78D396</string>
+			<key>IDESourceControlWCCName</key>
+			<string>MissIMUI</string>
+		</dict>
+	</array>
+</dict>
+</plist>
