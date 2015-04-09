@@ -18,7 +18,7 @@
 
 -(NSDateFormatter *)formatter
 {
-    if (_formatter) {
+    if (!_formatter) {
         _formatter = [[NSDateFormatter alloc] init];
         [_formatter setDateFormat:@"YYYY年M月dd日 HH时mm分ss秒"];
     }
