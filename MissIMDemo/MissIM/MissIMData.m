@@ -10,20 +10,10 @@
 
 @interface MissIMData()
 
-@property(nonatomic,strong) NSDateFormatter *formatter;
 
 @end
 
 @implementation MissIMData
-
--(NSDateFormatter *)formatter
-{
-    if (!_formatter) {
-        _formatter = [[NSDateFormatter alloc] init];
-        [_formatter setDateFormat:@"YYYY年M月dd日 HH时mm分ss秒"];
-    }
-    return _formatter;
-}
 
 -(instancetype)initWithMissMessageDataSource:(NSDictionary *)dict isNotHistory:(BOOL)isNotHistory
 {
@@ -33,12 +23,8 @@
         self.iconURL = dict[@"iconURL"];
         self.iconImage = dict[@"iconImage"];
         self.userId = dict[@"userId"];
-        if (isNotHistory) {
-            self.sendTime = [self createDateNowString];
-        }else{
-            int64_t timeId = [dict[@"sendTime"] longLongValue];
-            self.sendTime = [self createDateHistoryString:timeId];
-        }
+        self.sendTime = dict[@"sendTime"];
+        
         //设置发送者
         if ([dict[@"from"] integerValue] == kMISSIMFROMME) {
             //自己发送的消息
@@ -61,20 +47,6 @@
         }
     }
     return self;
-}
-
--(NSString *)createDateNowString
-{
-    NSString *nowTime = [self.formatter stringFromDate:[NSDate date]];
-    return nowTime;
-}
-
--(NSString *)createDateHistoryString:(int64_t)timeId
-{
-    NSDate *date = [NSDate dateWithTimeIntervalSince1970:timeId/1000.0];
-    NSString *historyTime = [self.formatter stringFromDate:date];
-    return historyTime;
-    
 }
 
 -(void)dealloc

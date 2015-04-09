@@ -14,9 +14,21 @@
 
 @interface MissIMModelManager()
 
+@property(nonatomic,strong) NSDateFormatter *formatter;
+
 @end
 
 @implementation MissIMModelManager
+
+
+-(NSDateFormatter *)formatter
+{
+    if (!_formatter) {
+        _formatter = [[NSDateFormatter alloc] init];
+        [_formatter setDateFormat:@"YYYY年M月dd日 HH时mm分ss秒"];
+    }
+    return _formatter;
+}
 
 -(instancetype)initWithdataSource:(NSDictionary *)info
 {
@@ -93,6 +105,13 @@
         //别人发送过来的消息
         dataDict[@"name"] = self.serviceName;
         dataDict[@"iconImage"] = self.serviceImage;
+    }
+    //设置时间
+    if (Ordered) {
+        dataDict[@"sendTime"] = [self createDateNowString];
+    }else{
+        int64_t timeId = [dataDict[@"sendTime"] longLongValue];
+        dataDict[@"sendTime"] = [self createDateHistoryString:timeId];
     }
     //把数据存储到模型对象中
     MissIMData *data = [[MissIMData alloc] initWithMissMessageDataSource:dataDict isNotHistory:Ordered];
@@ -185,6 +204,22 @@
              result[8], result[9], result[10], result[11],
              result[12], result[13], result[14], result[15]
              ] lowercaseString];
+}
+
+//当前的时间
+-(NSString *)createDateNowString
+{
+    NSString *nowTime = [self.formatter stringFromDate:[NSDate date]];
+    return nowTime;
+}
+
+//历史时间
+-(NSString *)createDateHistoryString:(int64_t)timeId
+{
+    NSDate *date = [NSDate dateWithTimeIntervalSince1970:timeId/1000.0];
+    NSString *historyTime = [self.formatter stringFromDate:date];
+    return historyTime;
+    
 }
 
 -(void)dealloc
