@@ -1,2 +1,5 @@
 AVOSCloud.framework
 AVOSCloudIM.framework
+
+MissIMServiceDemo.xcodeproj
+MissIMDemo.xcodeproj
