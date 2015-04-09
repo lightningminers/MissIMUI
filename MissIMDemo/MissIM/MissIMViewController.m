@@ -66,9 +66,6 @@ static NSString *kMissIMServiceClientId = @"missFServiceClient"; //客服Id
     //注册处理键盘的通知
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
-    
-    
-    
     [self connectionToAVIMClient];
 }
 
@@ -509,7 +506,7 @@ static NSString *kMissIMServiceClientId = @"missFServiceClient"; //客服Id
  */
 - (void)imClientResuming:(AVIMClient *)imClient
 {
-    
+    self.isConnectionStatus = NO;
 }
 /*!
  当前聊天状态已经恢复，常见于网络断开后重新连接上。
@@ -519,6 +516,7 @@ static NSString *kMissIMServiceClientId = @"missFServiceClient"; //客服Id
     self.isConnectionStatus = YES;
 }
 
+#pragma mark 内存管理
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

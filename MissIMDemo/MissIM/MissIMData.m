@@ -8,7 +8,22 @@
 
 #import "MissIMData.h"
 
+@interface MissIMData()
+
+@property(nonatomic,strong) NSDateFormatter *formatter;
+
+@end
+
 @implementation MissIMData
+
+-(NSDateFormatter *)formatter
+{
+    if (_formatter) {
+        _formatter = [[NSDateFormatter alloc] init];
+        [_formatter setDateFormat:@"YYYY年M月dd日 HH时mm分ss秒"];
+    }
+    return _formatter;
+}
 
 -(instancetype)initWithMissMessageDataSource:(NSDictionary *)dict isNotHistory:(BOOL)isNotHistory
 {
@@ -47,20 +62,17 @@
     }
     return self;
 }
+
 -(NSString *)createDateNowString
 {
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"YYYY年M月dd日 HH时mm分ss秒"];
-    NSString *date = [formatter stringFromDate:[NSDate date]];
-    return date;
+    NSString *nowTime = [self.formatter stringFromDate:[NSDate date]];
+    return nowTime;
 }
 
 -(NSString *)createDateHistoryString:(int64_t)timeId
 {
     NSDate *date = [NSDate dateWithTimeIntervalSince1970:timeId/1000.0];
-    NSDateFormatter *formater = [[NSDateFormatter alloc] init];
-    [formater setDateFormat:@"YYYY年M月dd日 HH时mm分ss秒"];
-    NSString *historyTime = [formater stringFromDate:date];
+    NSString *historyTime = [self.formatter stringFromDate:date];
     return historyTime;
     
 }

@@ -80,7 +80,6 @@
     //初始化视图坐标对象
     MissIMFrame *frame = [[MissIMFrame alloc] init];
     NSMutableDictionary *dataDict = [NSMutableDictionary dictionaryWithDictionary:dict];
-    
     /*
         未来可扩展，进一步处理复杂数据
      */
