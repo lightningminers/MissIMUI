@@ -28,6 +28,7 @@ static NSString *kMissIMServiceClientId = @"missFServiceClient"; //客服Id
 @property(nonatomic,strong) AVIMClient *avimClient; //AVIM 客户端类
 @property(nonatomic,strong) AVIMConversation *avimConversation; //AVIM 对话连接类
 @property(nonatomic,strong) UIApplication *application; //全局APP控制单例
+@property(nonatomic,strong) UIImagePickerController *picker;
 
 
 //查询历史纪录用的Id
@@ -47,6 +48,14 @@ static NSString *kMissIMServiceClientId = @"missFServiceClient"; //客服Id
 
 @implementation MissIMViewController
 
+-(UIImagePickerController *)picker
+{
+    if (!_picker) {
+        _picker = [[UIImagePickerController alloc] init];
+        _picker.delegate = self;
+    }
+    return _picker;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -75,8 +84,6 @@ static NSString *kMissIMServiceClientId = @"missFServiceClient"; //客服Id
     _messageNumber = 0;
     _isScroll = YES;
     _scrollNumber = 0;
-    
-    
     //创建模型管理类
     _modelManager = [[MissIMModelManager alloc] initWithdataSource:info];
     //创建AVIM客户端类
@@ -137,16 +144,14 @@ static NSString *kMissIMServiceClientId = @"missFServiceClient"; //客服Id
 }
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
-    picker.delegate = self;
     if (buttonIndex == 0) {
-        picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-        [self presentViewController:picker animated:YES completion:nil];
+        self.picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        [self presentViewController:self.picker animated:YES completion:nil];
     }else if (buttonIndex == 1){
         BOOL isCamera = [UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera];
         if (isCamera) {
-            picker.sourceType = UIImagePickerControllerSourceTypeCamera;
-            [self presentViewController:picker animated:YES completion:nil];
+            self.picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+            [self presentViewController:self.picker animated:YES completion:nil];
         }
     }else{
         NSLog(@"点击的取消");
