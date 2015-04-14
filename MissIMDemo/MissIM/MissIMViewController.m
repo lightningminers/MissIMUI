@@ -9,6 +9,7 @@
 
 
 #import <AVOSCloudIM/AVOSCloudIM.h>
+#import <objc/runtime.h>
 
 #import "MissIMViewController.h"
 #import "MissIMUIView.h"
@@ -19,7 +20,7 @@
 
 
 
-static NSString *kMissIMServiceClientId = @"missFServiceClient"; //客服Id
+static NSString *kMissIMServiceClientId = @"MISSIMCLIENTTTTT"; //客服Id
 
 @interface MissIMViewController ()<UINavigationControllerDelegate,UIImagePickerControllerDelegate,UITableViewDataSource,UITableViewDelegate,AVIMClientDelegate,UITextFieldDelegate,UIActionSheetDelegate>
 
@@ -60,7 +61,6 @@ static NSString *kMissIMServiceClientId = @"missFServiceClient"; //客服Id
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
     MissIMUIView *mainUI = [MissIMUIView missWithUI];
     [mainUI.MissIMBackForWebView addTarget:self action:@selector(backForWebView) forControlEvents:UIControlEventTouchUpInside];
     [mainUI.MissIMOptions addTarget:self action:@selector(openPhotoAndCamera) forControlEvents:UIControlEventTouchUpInside];
@@ -203,6 +203,12 @@ static NSString *kMissIMServiceClientId = @"missFServiceClient"; //客服Id
     }
 }
 
+/**
+ *  fetch 历史消息
+ *
+ *  @param conversationId 对话id
+ *  @param timeId         时间毫秒
+ */
 -(void)fetchHistoryMessage:(NSString *)conversationId timeId:(int64_t)timeId
 {
     __weak MissIMViewController *weakSelf = self;
