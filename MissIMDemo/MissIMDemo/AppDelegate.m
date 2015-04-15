@@ -26,6 +26,16 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     [AVOSCloud setApplicationId:@LEANCLOUD_APP_ID clientKey:@LEANCLOUD_APP_KEY];
+    
+    //调试日志
+    [AVOSCloud setVerbosePolicy:kAVVerboseShow];
+    [AVLogger addLoggerDomain:AVLoggerDomainIM];
+    [AVLogger addLoggerDomain:AVLoggerDomainCURL];
+    [AVLogger setLoggerLevelMask:AVLoggerLevelAll];
+    //异常捕获
+    [AVAnalytics setCrashReportEnabled:NO completion:^{
+    }];
+    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(saveMissIMPlistFile:) name:@"saveMissIMPlist" object:nil];
     self.dataMessage = [[NSMutableArray alloc] init];
 
