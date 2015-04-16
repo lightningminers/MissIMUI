@@ -20,7 +20,7 @@
 
 
 
-static NSString *kMissIMServiceClientId = @"MISSIMCLIENTTTTT"; //客服Id
+static NSString *kMissIMServiceClientId = @"MISSIMCLIENTTTTTSWERT"; //客服Id
 
 @interface MissIMViewController ()<UINavigationControllerDelegate,UIImagePickerControllerDelegate,UITableViewDataSource,UITableViewDelegate,AVIMClientDelegate,UITextFieldDelegate,UIActionSheetDelegate>
 
