@@ -13,7 +13,6 @@
 		1720C2ED1ACFF29F003BBE29 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1720C2EB1ACFF29F003BBE29 /* Main.storyboard */; };
 		1720C2EF1ACFF29F003BBE29 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1720C2EE1ACFF29F003BBE29 /* Images.xcassets */; };
 		1720C2F21ACFF29F003BBE29 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1720C2F01ACFF29F003BBE29 /* LaunchScreen.xib */; };
-		1720C2FE1ACFF29F003BBE29 /* MissIMDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1720C2FD1ACFF29F003BBE29 /* MissIMDemoTests.m */; };
 		1720C31C1ACFF31E003BBE29 /* AVOSCloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1720C3071ACFF31E003BBE29 /* AVOSCloud.framework */; };
 		1720C31D1ACFF31E003BBE29 /* AVOSCloudIM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1720C3081ACFF31E003BBE29 /* AVOSCloudIM.framework */; };
 		1720C31E1ACFF31E003BBE29 /* MissIMContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1720C30B1ACFF31E003BBE29 /* MissIMContentView.m */; };
@@ -33,6 +32,8 @@
 		1720C3431AD0252B003BBE29 /* MissIMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1720C3421AD0252B003BBE29 /* MissIMViewController.m */; };
 		1723C9411AD0F745006BDD82 /* client-icon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1723C93F1AD0F745006BDD82 /* client-icon.jpg */; };
 		1723C9421AD0F745006BDD82 /* service-icon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1723C9401AD0F745006BDD82 /* service-icon.jpg */; };
+		17BC401D1AF8B8EC00AD2BAB /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 17BC401B1AF8B8EC00AD2BAB /* Info.plist */; };
+		17BC401E1AF8B8EC00AD2BAB /* MissIMDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 17BC401C1AF8B8EC00AD2BAB /* MissIMDemoTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,8 +58,6 @@
 		1720C2EE1ACFF29F003BBE29 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		1720C2F11ACFF29F003BBE29 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		1720C2F71ACFF29F003BBE29 /* MissIMDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MissIMDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1720C2FC1ACFF29F003BBE29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1720C2FD1ACFF29F003BBE29 /* MissIMDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MissIMDemoTests.m; sourceTree = "<group>"; };
 		1720C3071ACFF31E003BBE29 /* AVOSCloud.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AVOSCloud.framework; sourceTree = "<group>"; };
 		1720C3081ACFF31E003BBE29 /* AVOSCloudIM.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AVOSCloudIM.framework; sourceTree = "<group>"; };
 		1720C30A1ACFF31E003BBE29 /* MissIMContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MissIMContentView.h; sourceTree = "<group>"; };
@@ -87,6 +86,8 @@
 		1720C3421AD0252B003BBE29 /* MissIMViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MissIMViewController.m; sourceTree = "<group>"; };
 		1723C93F1AD0F745006BDD82 /* client-icon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "client-icon.jpg"; sourceTree = "<group>"; };
 		1723C9401AD0F745006BDD82 /* service-icon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "service-icon.jpg"; sourceTree = "<group>"; };
+		17BC401B1AF8B8EC00AD2BAB /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		17BC401C1AF8B8EC00AD2BAB /* MissIMDemoTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MissIMDemoTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,8 +126,8 @@
 				1720C3071ACFF31E003BBE29 /* AVOSCloud.framework */,
 				1720C3081ACFF31E003BBE29 /* AVOSCloudIM.framework */,
 				1720C3091ACFF31E003BBE29 /* MissIM */,
+				17BC401A1AF8B8EC00AD2BAB /* MissIMDemoTests */,
 				1720C2E01ACFF29F003BBE29 /* MissIMDemo */,
-				1720C2FA1ACFF29F003BBE29 /* MissIMDemoTests */,
 				1720C2DF1ACFF29F003BBE29 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -167,23 +168,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		1720C2FA1ACFF29F003BBE29 /* MissIMDemoTests */ = {
-			isa = PBXGroup;
-			children = (
-				1720C2FD1ACFF29F003BBE29 /* MissIMDemoTests.m */,
-				1720C2FB1ACFF29F003BBE29 /* Supporting Files */,
-			);
-			path = MissIMDemoTests;
-			sourceTree = "<group>";
-		};
-		1720C2FB1ACFF29F003BBE29 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				1720C2FC1ACFF29F003BBE29 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		1720C3091ACFF31E003BBE29 /* MissIM */ = {
 			isa = PBXGroup;
 			children = (
@@ -215,6 +199,15 @@
 				1720C33A1AD00992003BBE29 /* MissIMModel.xcdatamodeld */,
 			);
 			name = ModelCoreData;
+			sourceTree = "<group>";
+		};
+		17BC401A1AF8B8EC00AD2BAB /* MissIMDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				17BC401B1AF8B8EC00AD2BAB /* Info.plist */,
+				17BC401C1AF8B8EC00AD2BAB /* MissIMDemoTests.m */,
+			);
+			path = MissIMDemoTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,7 +259,7 @@
 				TargetAttributes = {
 					1720C2DD1ACFF29F003BBE29 = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = B4Y6H834DA;
+						DevelopmentTeam = V94YS5RCTX;
 					};
 					1720C2F61ACFF29F003BBE29 = {
 						CreatedOnToolsVersion = 6.2;
@@ -300,6 +293,7 @@
 			files = (
 				1720C2ED1ACFF29F003BBE29 /* Main.storyboard in Resources */,
 				1723C9421AD0F745006BDD82 /* service-icon.jpg in Resources */,
+				17BC401D1AF8B8EC00AD2BAB /* Info.plist in Resources */,
 				1720C2F21ACFF29F003BBE29 /* LaunchScreen.xib in Resources */,
 				1723C9411AD0F745006BDD82 /* client-icon.jpg in Resources */,
 				1720C2EF1ACFF29F003BBE29 /* Images.xcassets in Resources */,
@@ -324,6 +318,7 @@
 				1720C2E71ACFF29F003BBE29 /* AppDelegate.m in Sources */,
 				1720C33C1AD00992003BBE29 /* MissIMModel.xcdatamodeld in Sources */,
 				1720C3211ACFF31E003BBE29 /* MissIMModelManager.m in Sources */,
+				17BC401E1AF8B8EC00AD2BAB /* MissIMDemoTests.m in Sources */,
 				1720C31E1ACFF31E003BBE29 /* MissIMContentView.m in Sources */,
 				1720C3231ACFF31E003BBE29 /* MissIMTableViewCell.m in Sources */,
 				1720C3241ACFF31E003BBE29 /* MissIMTest.m in Sources */,
@@ -340,7 +335,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1720C2FE1ACFF29F003BBE29 /* MissIMDemoTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -460,9 +454,10 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = MissIMDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "6b419f17-3e53-4bfc-b4ff-89ab7dcd1ff2";
 			};
 			name = Debug;
 		};
@@ -476,9 +471,10 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = MissIMDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "6b419f17-3e53-4bfc-b4ff-89ab7dcd1ff2";
 			};
 			name = Release;
 		};

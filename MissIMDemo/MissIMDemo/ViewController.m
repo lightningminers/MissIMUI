@@ -27,7 +27,7 @@
 - (IBAction)gotoMissIMController:(UIButton *)sender {
     
     MissIMViewController *im = [[MissIMViewController alloc] init];
-    [im addInfoDataSource:@{@"nickname":@"wen",@"userId":@"icepygodmanDEFTGTG",@"iconUrl":@"http://www.battlenet.com.cn/static-render/cn/hearthglen/173/58685869-avatar.jpg?alt=wow/static/images/2d/avatar/7-0.jpg"}];
+    [im addInfoDataSource:@{@"nickname":@"wenwen",@"userId":@"icepygodmanDEFTGTG",@"iconUrl":@"http://www.battlenet.com.cn/static-render/cn/hearthglen/173/58685869-avatar.jpg?alt=wow/static/images/2d/avatar/7-0.jpg"}];
     [self presentViewController:im animated:YES completion:nil];
     
 }
